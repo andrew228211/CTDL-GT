@@ -17,23 +17,17 @@ int main()
 	{
 		int n;
 		cin>>n;
-		ll x;
-		Sapxep Ds[1005];
+		Sapxep Ds[n+5];
 		for(int i=0;i<n;i++)
 		{
-			cin>>x;
-			Ds[i].start=x;
-		}
-		for(int i=0;i<n;i++){
-			cin>>x;
-			Ds[i].end=x;
+			cin>>Ds[i].start>>Ds[i].end;
 		}
 		int cnt=1;
 		int dem=0;
 		sort(Ds,Ds+n,Kt);
 		for(int i=1;i<n;i++)
 		{
-			if(Ds[i].start>Ds[dem].end)
+			if(Ds[i].start>=Ds[dem].end)
 			{
 				cnt++;
 				dem=i;
