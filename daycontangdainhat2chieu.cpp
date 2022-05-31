@@ -45,7 +45,7 @@ int main() {
 		int id = binarySearch(0, n);
 		if (id < n) {
 			set<point>::iterator it = ++s[id].insert(dummy).first;
-			cout<<it->first<<" ";
+		//	cout<<it->first<<" ";
 			while (it != s[id].end()) {
 				if(cmp(dummy, *it))
 					s[id].erase(it++);
