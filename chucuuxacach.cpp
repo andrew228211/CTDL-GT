@@ -9,6 +9,7 @@ int dx[4]={-1,1,0,0};
 int dy[4]={0,0,1,-1};
 set<pair<pa,pa>>s;
 vector<pair<int,int>>List;
+set<pa>tmp;
 void dfs(pa u)
 {
 	chuaxet[u.fi][u.se]=1;
@@ -24,7 +25,9 @@ void dfs(pa u)
 }
 int main()
 {
-	cin>>n>>m>>k;
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+	cin>>n>>k>>m;
 	for(int i=0;i<m;i++)
 	{
 		int u,v,r,l;
@@ -37,21 +40,29 @@ int main()
 		int u,v;
 		cin>>u>>v;
 		List.push_back({u,v});
+		tmp.insert({u,v});
 	}
 	int cnt=0;
 	for(auto x:List)
 	{
-		memset(chuaxet,0,sizeof(chuaxet));
-		dfs(x);
-		for(auto y : List)
+		if(chuaxet[x.fi][x.se])
 		{
-			if(chuaxet[y.fi][y.se]==1)
+			continue;
+		}
+		dfs(x);
+		vector<pa>res;
+		for(auto y:tmp)
+		{
+			if(chuaxet[y.fi][y.se])
 			{
-				cnt++;
-				cout<<y.fi<<" "<<y.se<<" ";
+				res.push_back(y);
 			}
 		}
-		cout<<endl;
+		for(auto y:res)
+		{
+			tmp.erase(y);
+		}
+		cnt+=res.size()*tmp.size();
 	}
-	cout<<cnt/2;
+	cout<<cnt;
 }
