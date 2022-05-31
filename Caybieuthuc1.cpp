@@ -2,12 +2,12 @@
 using namespace std;
 struct Node{
 	char c;
-	Node *left,*right;
+	Node *left,*right; tao cay ben trai, phai
 };
-typedef Node* Tree;
+typedef Node* Tree; dat ten con tro node la Tree
 Tree creatNote(char c)
 {
-	Tree res=new Node;
+	Tree res=new Node;//
 	res->c=c;
 	res->left=res->right=NULL;
 	return res;
@@ -29,6 +29,7 @@ int main()
 	{
 		string s;
 		cin>>s;
+		// 234++ -> 2+3+4
 		stack<Tree>st;
 		for(char &i:s)
 		{
