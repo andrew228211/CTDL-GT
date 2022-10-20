@@ -1,6 +1,5 @@
 # CTDL-DL
 ```
-My very first time of developing an android app using Kotlin with Android Architecture Components. 
-Using Live Data in combination with Couroutine scope to make sure that room database run smoothly in background.
+Đây là source code Cấu trúc dữ liệu và giải thuật của trường PTIT
 ```
 
